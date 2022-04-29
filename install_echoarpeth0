@@ -4,7 +4,7 @@ U_LOG=$(stat -c %U /var/log/syslog)
 G_LOG=$(stat -c %G /var/log/syslog)
 
 
-cd frprf
+cd install_files
 cp arpeth /var/arpeth
 cp echoarp.service /etc/systemd/system/echoarp.service
 cp echoarp.timer /etc/systemd/system/echoarp.timer
