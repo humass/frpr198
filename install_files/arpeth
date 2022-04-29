@@ -1,0 +1,3 @@
+#!/bin/bash
+
+echo $(arp -i enp1s0)
