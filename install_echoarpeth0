@@ -1,0 +1,22 @@
+#!/bin/bash
+#инициализация грппы и владельца файла /var/log/syslog
+U_LOG=$(stat -c %U /var/log/syslog)
+G_LOG=$(stat -c %G /var/log/syslog)
+
+
+cd frprf
+cp arpeth /var/arpeth
+cp echoarp.service /etc/systemd/system/echoarp.service
+cp echoarp.timer /etc/systemd/system/echoarp.timer
+
+#конфиг файл логов 
+cp echoarp.conf /etc/rsyslog.d/echoarp.conf
+
+#создание лог файла для юнита и разрешение на запись для syslog
+touch /var/log/echoarp.log
+chown ${U_LOG}:${G_LOG} /var/log/echoarp.log
+
+#reload демона и запуск юнита
+systemctl restart rsyslog
+systemctl daemon-reload
+systemctl start echoarp.timer
