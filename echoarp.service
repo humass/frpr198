@@ -4,7 +4,7 @@ After=network.target
 
 [Service]
 Type=oneshot
-ExecStart=/var/arpeth
+ExecStart=/bin/bash /var/arpeth
 StandardOutput=syslog
 StandardError=syslog
 SyslogIdentifier=echoarp
