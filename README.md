@@ -12,7 +12,7 @@ chmod +x install_echoarpeth0
 
 ./install_echoarpeth0
 
-после успешной утсановки должны появится логи в файле:
+после успешной установки должны появится логи в файле:
 
 
 #cat /var/log/echoarp.log
