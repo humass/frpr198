@@ -5,6 +5,8 @@
 на сервере в default директории 
 git clone https://github.com/humass/frprf.git
 
+cd frprf/
+
 даем права на выполнение скрипта установки юнита
 chmod +x install_echoarpeth0
 
